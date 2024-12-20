@@ -1,0 +1,14 @@
+<main *ngIf="blogPost$ | async as post">
+  <section>
+    <article class="blog-posts">
+      <img [src]="post.fields.featureImage.fields.file.url" alt="" />
+      <h2>{{ post.fields.title }}</h2>
+      <p class="author">{{ post.fields.author }}</p>
+      <p class="summary">{{ post.fields.summary }}</p>
+      <hr />
+      <p class="content">
+        {{ post.fields.content.content[0].content[0].value }}
+      </p>
+    </article>
+  </section>
+</main>
