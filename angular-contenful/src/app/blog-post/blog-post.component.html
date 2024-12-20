@@ -1,4 +1,4 @@
-<main *ngIf="blogPost$ | async as post">
+<main *ngIf="blogPost$ | async as post" class="mt-20">
   <section>
     <article class="blog-posts">
       <img [src]="post.fields.featureImage.fields.file.url" alt="" />
