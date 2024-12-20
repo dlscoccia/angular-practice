@@ -9,8 +9,8 @@ export class ContentfulService {
   constructor() {}
 
   private client = createClient({
-    space: 'fphv9lr9jb20',
-    accessToken: 'urf3b0n659zFpkrCUoxjk__yMiwLWPBIQl9-sBeZE-Y',
+    space: '',
+    accessToken: '',
   });
 
   getAllEntries() {
