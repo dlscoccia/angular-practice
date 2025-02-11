@@ -4,14 +4,19 @@ import { RouterModule } from '@angular/router';
 import { SidebarMenuItemComponent } from '../../components/sidebarMenuItem/sidebarMenuItem.component';
 import { routes } from '../../../app.routes';
 
-@Component({
+@Component( {
   selector: 'app-dashboard-layout',
-  imports: [CommonModule, RouterModule, SidebarMenuItemComponent],
   standalone: true,
+  imports: [
+    CommonModule,
+    RouterModule,
+    SidebarMenuItemComponent,
+  ],
   templateUrl: './dashboardLayout.component.html',
-  styleUrl: './dashboardLayout.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
-})
+} )
 export class DashboardLayoutComponent {
-  public routes = routes[0].children?.filter((route) => route.data);
+
+  public routes = routes[0].children?.filter( (route) => route.data );
+
 }

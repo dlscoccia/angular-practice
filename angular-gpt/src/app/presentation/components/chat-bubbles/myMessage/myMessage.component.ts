@@ -1,11 +1,15 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-@Component({
+@Component( {
   selector: 'app-my-message',
-  imports: [],
+  standalone: true,
+  imports: [
+    CommonModule,
+  ],
   templateUrl: './myMessage.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-})
+} )
 export class MyMessageComponent {
-  @Input({ required: true }) text!: string;
+  @Input({required: true}) text!: string;
 }

@@ -1,98 +1,58 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Base styles */
-html,
-body {
+html, body {
   background-color: #000000;
   color: white;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
+
 }
 
+
 h1 {
-  font-size: 1.875rem; /* Equivalente a text-3xl */
-  font-weight: bold;
-  margin-bottom: 1rem; /* Equivalente a mb-4 */
+  @apply text-3xl font-bold mb-4;
 }
 
 p {
-  margin-bottom: 1rem; /* Equivalente a mb-4 */
+  @apply mb-4;
 }
 
 ul {
-  list-style-type: disc; /* Equivalente a list-disc */
-  padding-left: 1rem; /* Equivalente a list-inside */
+  @apply list-disc list-inside;
 }
 
 strong {
-  font-weight: bold;
-  color: #6366f1; /* Equivalente a text-indigo-400 */
-  font-size: 1.25rem; /* Equivalente a text-xl */
+  @apply font-bold text-indigo-400 text-xl;
 }
 
 em {
-  font-style: italic;
-  color: #ec4899; /* Equivalente a text-pink-500 */
+  @apply italic text-pink-500;
 }
+
 
 .btn-primary {
-  background-color: #6366f1; /* Equivalente a bg-indigo-500 */
-  color: white;
-  font-weight: bold;
-  padding: 0.5rem 1rem; /* Equivalente a py-2 px-4 */
-  border-radius: 1rem; /* Equivalente a rounded-xl */
-  transition: background-color 0.2s ease-in-out; /* Equivalente a transition-all duration-200 ease-in-out */
-}
-
-.btn-primary:hover {
-  background-color: #4f46e5; /* Equivalente a hover:bg-indigo-700 */
+  @apply bg-indigo-500 text-white font-bold py-2 px-4 rounded-xl hover:bg-indigo-700 transition-all duration-200 ease-in-out;
 }
 
 .btn-primary:disabled {
-  background-color: #6366f1; /* Equivalente a bg-indigo-500 */
-  color: white;
-  font-weight: bold;
-  padding: 0.5rem 1rem; /* Equivalente a py-2 px-4 */
-  border-radius: 1rem; /* Equivalente a rounded-xl */
-  opacity: 0.5; /* Equivalente a opacity-50 */
-  cursor: not-allowed; /* Equivalente a cursor-not-allowed */
+  @apply bg-indigo-500 text-white font-bold py-2 px-4 rounded-xl opacity-50 cursor-not-allowed;
 }
 
 .chat-container {
-  display: flex;
-  flex-direction: column; /* Equivalente a flex-col */
-  flex: 1 0 auto; /* Equivalente a flex-auto */
-  flex-shrink: 0; /* Equivalente a flex-shrink-0 */
-  border-radius: 1rem; /* Equivalente a rounded-2xl */
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.05
-  ); /* Equivalente a bg-white bg-opacity-5 */
-  height: calc(100vh - 90px);
-  padding: 1rem; /* Equivalente a p-4 */
-  width: calc(100vw - 500px);
+  @apply flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-white bg-opacity-5 h-[calc(100vh-90px)] p-4 w-[calc(100vw-500px)];
 }
 
 .chat-messages {
-  display: flex;
-  flex-direction: column; /* Equivalente a flex-col */
-  height: 100%;
-  overflow-x: auto;
-  margin-bottom: 1rem; /* Equivalente a mb-4 */
-  overflow-y: scroll; /* Equivalente a overflow-scroll */
+  @apply flex flex-col h-full overflow-x-auto mb-4 overflow-scroll;
 }
+
 
 /* Animations */
-.fade-in {
-  animation: fadeIn 0.3s;
-}
+
+.fade-in { animation: fadeIn .3s; }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
